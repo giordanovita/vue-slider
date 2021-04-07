@@ -4,9 +4,13 @@ function vueSlider(){
         data:{
             'title':'SLIDER',
             'img':'img/mountains.jpg',
+            'loop':0,
         },
-        methods:{
-            prevSlide: function(){
+        created: function () {
+            this.slidesLoop();
+        },
+         methods:{
+            prevSlide:function(){
                 if(this.img=='img/mountains.jpg'){
                     this.img='img/mountains2.jpg'
                 }else if(this.img=='img/mountains2.jpg'){
@@ -23,8 +27,13 @@ function vueSlider(){
                 }else{
                     this.img='img/mountains.jpg'
                 }
-            }
+            },
+
+            slidesLoop: function() {
+                this.loop = setInterval(this.nextSlide, 3000)
+
         }
+    }
     })
 
 }
