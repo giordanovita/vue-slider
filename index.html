@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+    <!-- VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" charset="utf-8"></script>
+</head>
+<body>
+    <div id="app" class="container">
+
+        <h1> {{title}} </h1>
+        
+        <ul class="slider">
+            <li>
+                <i @click="prevSlide" class="fas fa-angle-left"></i>
+            </li>
+
+            <li>
+               <img v-bind:src="img" alt="" width="300px" height="200px">
+           </li>
+
+           <li>
+            <i @click="nextSlide" class="fas fa-angle-right"></i>
+           </li>
+        </ul>
+
+
+    </div>
+    
+</body>
+</html>
