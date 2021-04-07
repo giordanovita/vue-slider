@@ -19,23 +19,19 @@
 
         <h1> {{title}} </h1>
         
-        <ul class="slider">
+        <ul class="slider" >
             <li>
                 <i @click="prevSlide" class="fas fa-angle-left"></i>
             </li>
 
             <li>
-               <img v-bind:src="img" alt="" width="300px" height="200px">
+               <img  @mouseover="stopSlidesLoop"  @mouseleave="slidesLoop" v-bind:src="img" alt="" >
            </li>
 
            <li>
             <i @click="nextSlide" class="fas fa-angle-right"></i>
            </li>
         </ul>
-
-      
-
-
 
     </div>
     

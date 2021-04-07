@@ -4,7 +4,7 @@ function vueSlider(){
         data:{
             'title':'SLIDER',
             'img':'img/mountains.jpg',
-            'loop':0,
+            'loop':""
         },
         created: function () {
             this.slidesLoop();
@@ -32,7 +32,12 @@ function vueSlider(){
             slidesLoop: function() {
                 this.loop = setInterval(this.nextSlide, 3000)
 
-        }
+            },
+
+            stopSlidesLoop: function() {
+
+                clearInterval(this.loop);
+            }
     }
     })
 
