@@ -3,30 +3,25 @@ function vueSlider(){
         el:'#app',
         data:{
             'title':'SLIDER',
-            'img':'img/mountains.jpg',
-            'loop':""
+            'img':['img/mountains.jpg','img/mountains1.jpg','img/mountains2.jpg'],
+            'loop':"",
+            'index':0
         },
         created: function () {
             this.slidesLoop();
         },
          methods:{
             prevSlide:function(){
-                if(this.img=='img/mountains.jpg'){
-                    this.img='img/mountains2.jpg'
-                }else if(this.img=='img/mountains2.jpg'){
-                    this.img='img/mountains1.jpg'
-                }else{
-                    this.img='img/mountains.jpg'
-            }
+               this.index--;
+               if(this.index < 0){
+                   this.index = (this.img.length - 1)
+               }
         },
             nextSlide:function(){
-                if(this.img=='img/mountains.jpg'){
-                    this.img='img/mountains1.jpg'
-                }else if(this.img=='img/mountains1.jpg'){
-                    this.img='img/mountains2.jpg'
-                }else{
-                    this.img='img/mountains.jpg'
-                }
+                this.index++;
+               if(this.index >= this.img.length){
+                   this.index = 0;
+               }
             },
 
             slidesLoop: function() {

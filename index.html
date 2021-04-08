@@ -25,12 +25,16 @@
             </li>
 
             <li>
-               <img  @mouseover="stopSlidesLoop"  @mouseleave="slidesLoop" v-bind:src="img" alt="" >
+               <img  @mouseover="stopSlidesLoop"  @mouseleave="slidesLoop" v-bind:src="img[index]" alt="" >
            </li>
 
            <li>
-            <i @click="nextSlide" class="fas fa-angle-right"></i>
+            <i @click="nextSlide" class="fas fa-angle-right" ></i>
            </li>
+        </ul>
+
+        <ul>
+            <li><i class="fas fa-circle" v-for='i in img.length' :class='((i - 1)==index) ? "blue":""' ></i></li>
         </ul>
 
     </div>
